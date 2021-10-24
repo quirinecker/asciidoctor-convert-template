@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source .env
+source config.sh
 
 ./convert.sh $1 $2 $3
 

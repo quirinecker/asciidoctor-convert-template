@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source .env
+source config.sh
 
 inputDir=$INPUTPATH
 outputDir=$OUTPUTPATH
