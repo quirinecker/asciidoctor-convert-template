@@ -22,9 +22,9 @@ jobs:
       - name: Build
         uses: quirinecker/asciidoctor-convert-action@main
         with:
-          slides: ${{ env.SLIDES }}
-          inputPath: ${{ env.INPUTPATH }}
-          outputPath: ${{ env.OUTPUTPATH }}
+          slides: ${ SLIDES }
+          inputPath: ${ INPUTPATH }
+          outputPath: ${ OUTPUTPATH }
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
