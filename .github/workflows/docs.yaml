@@ -11,15 +11,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Init Configuration
+        run: |
+          ./config.sh
+          echo ${{ env.SLIDES }}
       - name: Build
         uses: quirinecker/asciidoctor-convert-action@main
         with:
-          slides: true
-          inputPath: docs
-          outputPath: dist
+          slides: ${{ env.SLIDES }}
+          inputPath: ${{ env.INPUTPATH }}
+          outputPath: ${{ env.OUTPUTPATH }}
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           GITHUB_TOKEN: ${{ github.TOKEN }}
           BRANCH: gh-pages
-          FOLDER: dist
+          FOLDER: ${{ env.OUTPUTPATH }}
