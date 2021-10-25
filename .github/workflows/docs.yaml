@@ -17,6 +17,7 @@ jobs:
           export SLIDES
           export INPUTPATH
           export OUTPUTPATH
+          printenv | grep INPUTPATH
           echo ${{ env.SLIDES }}
       - name: Build
         uses: quirinecker/asciidoctor-convert-action@main
