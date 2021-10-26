@@ -9,25 +9,22 @@ jobs:
   build:
     name: Build ⚙
     runs-on: ubuntu-latest
+    env:
+      INPUTPATH: docs
+      OUTPUTPATH: dist
+      SLIDES: true
+      BRANCH: gh-pages
     steps:
       - uses: actions/checkout@v2
-      - name: Init Configuration
-        run: |
-          source ./config.sh
-          export SLIDES
-          export INPUTPATH
-          export OUTPUTPATH
-          printenv | grep INPUTPATH
-          echo ${{ env.SLIDES }}
       - name: Build
         uses: quirinecker/asciidoctor-convert-action@main
         with:
-          slides: ${ SLIDES }
-          inputPath: ${ INPUTPATH }
-          outputPath: ${ OUTPUTPATH }
+          slides: ${{ env.SLIDES }}
+          inputPath: ${{ env.INPUTPATH }}
+          outputPath: ${{ env.OUTPUTPATH }}
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           GITHUB_TOKEN: ${{ github.TOKEN }}
-          BRANCH: gh-pages
+          BRANCH: ${{ env.BRANCH }}
           FOLDER: ${{ env.OUTPUTPATH }}
