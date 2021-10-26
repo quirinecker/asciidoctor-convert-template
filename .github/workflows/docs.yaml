@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    name: Build ⚙
+    name: Build & Publish 🚀
     runs-on: ubuntu-latest
     env:
       INPUTPATH: docs
