@@ -6,8 +6,6 @@ inputDir=$INPUTPATH
 outputDir=$OUTPUTPATH
 convertSlides=$SLIDES
 
-echo "revealjs" > "$inputDir/slides/.gitignore"
-
 echo "inputDir => $inputDir"
 echo "outputDir => $outputDir"
 echo "convertSlides => $convertSlides"
