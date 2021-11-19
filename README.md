@@ -30,6 +30,21 @@ jobs:
 |--------------|-----------|------------|----------------|---------|
 | type         | string    | string     | boolean        | string  |
 
+## Directory Trigger
+
+After changing the input path make sure to also change the directory trigger at the top of the file.
+
+```yaml
+on:
+  push:
+    branches:
+      - 'main'
+    paths:
+      - docs/**
+```
+
+Just change docs to the prefered input directory.
+
 ## Scripts
 
 Sometimes it is useful to just convert or push it locally for a quick update. In the root directory are two scripts
