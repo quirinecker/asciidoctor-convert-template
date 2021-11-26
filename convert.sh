@@ -15,4 +15,4 @@ docker run \
     -e INPUT_SLIDES=$convertSlides \
     -e INPUT_INPUTPATH=$inputDir \
     -e INPUT_OUTPUTPATH=$outputDir \
-     docker.pkg.github.com/quirinecker/asciidoctor-convert-action/docker-image:latest
+     quirinecker/asciidoctor-convert
